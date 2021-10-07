@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@lifi/components": ["src/components/index", "src/components/*"],
+      "@lifi/components/*": ["src/components/*"]
+    }
+  }
+}
