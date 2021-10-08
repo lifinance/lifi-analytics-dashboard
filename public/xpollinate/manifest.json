@@ -1,6 +1,6 @@
 {
-  "short_name": "LiFi",
-  "name": "Li.Finance",
+  "short_name": "xPollinate",
+  "name": "xPollinate.io",
   "icons": [
     {
       "src": "favicon.ico",
@@ -21,8 +21,5 @@
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#181523",
-  "permissions": {
-    "desktop-notification": {}
-  }
+  "background_color": "#181523"
 }
