@@ -19,13 +19,13 @@ export default function useUsagePerRouteColumns() {
         dataIndex: 'timeTaken',
       },
       {
-        title: 'txns',
+        title: 'On Chain Transaction',
         dataIndex: 'txns',
       },
       {
-        title: 'volume',
+        title: 'Total Liqudity',
         dataIndex: 'volume',
-        render: ({ volume }) => formatMoney(volume),
+        render: (volume) => formatMoney(volume),
       },
     ],
     [],

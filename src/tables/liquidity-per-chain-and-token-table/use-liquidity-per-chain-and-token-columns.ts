@@ -33,7 +33,7 @@ export default function useLiquidityPerChainAndTokenColumns({ chainFilter, bridg
         title: 'Total Liquidity',
         dataIndex: 'tvl',
         sorter: (a, b) => a.tvl - b.tvl,
-        render: ({ tvl }) => formatMoney(tvl),
+        render: (tvl) => formatMoney(tvl),
       },
     ],
     [chainFilter, bridgeFilter],

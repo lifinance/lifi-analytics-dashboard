@@ -13,7 +13,7 @@ export default function useBridgeColumns() {
       {
         title: 'Total Liquidity',
         dataIndex: 'tvl',
-        render: ({ tvl }) => formatMoney(tvl),
+        render: (tvl) => formatMoney(tvl),
       },
     ],
     [],

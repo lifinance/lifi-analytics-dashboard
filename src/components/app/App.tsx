@@ -4,6 +4,7 @@ import { useFetch } from '@lifi/hooks'
 import { AssetMovement, Bridge, Individual, Pair } from '@lifi/types'
 import { Divider, Layout, Spin } from 'antd'
 import { Content, Header } from 'antd/lib/layout/layout'
+import logo from './logo.png'
 
 type BridgesResponse = {
   data: {
@@ -25,8 +26,10 @@ export default function App() {
   const isLoaded = !!bridgesData && !!movementData
   return (
     <Layout className="layout">
-      <Header>
-        <h1 style={{ color: 'white' }}>FIJI-UI</h1>
+      <Header style={{ display: 'flex', alignItems: 'center' }}>
+        <div className="logo" style={{ width: '40px' }}>
+          <img alt="logo" style={{ width: '100%', height: 'auto' }} src={logo} />
+        </div>
       </Header>
       <Content style={{ padding: '20px 50px' }}>
         {isLoaded ? (
