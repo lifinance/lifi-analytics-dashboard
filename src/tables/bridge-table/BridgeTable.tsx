@@ -12,7 +12,7 @@ export default function BridgeTable({ data }: Props) {
   return (
     <>
       <TableTitle title="Bridge Analytics" />
-      <Table<Bridge> dataSource={data} columns={columns} pagination={false} />
+      <Table<Bridge> dataSource={data} columns={columns} pagination={false} rowKey="bridge" />
     </>
   )
 }
