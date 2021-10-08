@@ -9,12 +9,10 @@ export default function useBridgeColumns() {
       {
         title: 'Name',
         dataIndex: 'bridge',
-        key: 'bridge',
       },
       {
         title: 'Total Liquidity',
         dataIndex: 'tvl',
-        key: 'tvl',
         render: formatMoney,
       },
     ],

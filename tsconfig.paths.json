@@ -9,7 +9,9 @@
       "@lifi/hooks": ["src/hooks/index", "src/hooks/*"],
       "@lifi/hooks/*": ["src/hooks/*"],
       "@lifi/types": ["src/types/index", "src/types/*"],
-      "@lifi/types/*": ["src/types/*"]
+      "@lifi/types/*": ["src/types/*"],
+      "@lifi/utils": ["src/utils/index", "src/utils/*"],
+      "@lifi/utils/*": ["src/utils/*"]
     }
   }
 }
