@@ -20,8 +20,18 @@ import uniswap from './uniswap.png'
 import viper from './viper.png'
 import xdai from './xdai.png'
 import moonriver from './moonriver.png'
+import huobi from './huobi.png'
+import okexchain from './okexchain.png'
+import kcc from './kcc.png'
+import fusion from './fusion.png'
+import iotex from './iotex.png'
 
 export default {
+  iotex,
+  fusion,
+  kcc,
+  okexchain,
+  huobi,
   arbitrum,
   avalanche,
   bsc,

@@ -23,11 +23,13 @@ export default function useLiquidityPerChainAndTokenColumns({ chainFilter, bridg
           const icon = icons && icons[chain]
           return (
             <>
-              <img
-                style={{ width: '15px', height: 'auto', marginRight: '10px' }}
-                alt={chain}
-                src={icon}
-              />
+              {icon && (
+                <img
+                  style={{ width: '15px', height: 'auto', marginRight: '10px' }}
+                  alt={chain}
+                  src={icon}
+                />
+              )}
               {chain}
             </>
           )
