@@ -25,20 +25,28 @@ export default function useUsagePerRouteColumns({ fromFilter, toFilter }: Props)
         onFilter: (value, record) => record.to.indexOf(value as string) === 0,
       },
       {
-        title: 'Time Taken',
+        title: 'Avg. Time Taken',
         dataIndex: 'timeTaken',
+        align: 'right',
         sorter: (a, b) => a.timeTaken - b.timeTaken,
+        render: (duration) => {
+          const sec = Math.floor(duration % 60)
+          const min = Math.floor(duration / 60)
+          return min + ':' + (sec > 9 ? sec : '0' + sec) + ' min'
+        }
       },
       {
-        title: 'On Chain Transaction',
+        title: '# Transaction',
         dataIndex: 'txns',
+        align: 'right',
         sorter: (a, b) => a.txns - b.txns,
       },
       {
-        title: 'Total Liqudity',
+        title: 'Volumne',
         dataIndex: 'volume',
+        align: 'right',
         sorter: (a, b) => a.volume - b.volume,
-        render: (volume) => formatMoney(volume),
+        render: (volume) => formatMoney(volume, { hideDecimal: true }),
       },
     ],
     [],
