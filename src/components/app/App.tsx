@@ -30,6 +30,7 @@ export default function App() {
         <div className="logo" style={{ width: '40px' }}>
           <img alt="logo" style={{ width: '100%', height: 'auto' }} src={logo} />
         </div>
+        <h1 style={{ margin: '0 0 0 15px', color: 'white' }}>Li.Finance - Bridge Analytics</h1>
       </Header>
       <Content style={{ padding: '20px 50px' }}>
         {isLoaded ? (
