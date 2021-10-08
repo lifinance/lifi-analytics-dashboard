@@ -3,6 +3,7 @@ import { ColumnsType } from 'antd/es/table'
 import { ColumnFilterItem } from 'antd/es/table/interface'
 import { Individual } from '@lifi/types'
 import { formatMoney } from '@lifi/utils'
+import icons from './icons'
 
 type Props = {
   chainFilter: ColumnFilterItem[]
@@ -17,6 +18,20 @@ export default function useLiquidityPerChainAndTokenColumns({ chainFilter, bridg
         dataIndex: 'chain',
         filters: chainFilter,
         onFilter: (value, record) => record.chain.indexOf(value as string) === 0,
+        render: (chain) => {
+          // @ts-ignore
+          const icon = icons && icons[chain]
+          return (
+            <>
+              <img
+                style={{ width: '15px', height: 'auto', marginRight: '10px' }}
+                alt={chain}
+                src={icon}
+              />
+              {chain}
+            </>
+          )
+        },
       },
       {
         title: 'Token',
