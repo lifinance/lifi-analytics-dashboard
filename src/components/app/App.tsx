@@ -13,8 +13,10 @@ type AnalyticsResponse = {
   }
 }
 
+const API_BASE_URI = 'https://analytics.li.finance/api'
+
 export default function App() {
-  const { data } = useFetch<AnalyticsResponse>('http://3.131.21.10/bridges_tvl')
+  const { data } = useFetch<AnalyticsResponse>(API_BASE_URI + '/bridges_tvl')
   return (
     <Layout className="layout">
       <Header>
