@@ -4,6 +4,7 @@ import { ColumnFilterItem } from 'antd/es/table/interface'
 import { Individual } from '@lifi/types'
 import { formatMoney } from '@lifi/utils'
 import icons from './icons'
+import { formatBridge } from '@lifi/tables'
 
 type Props = {
   chainFilter: ColumnFilterItem[]
@@ -45,6 +46,7 @@ export default function useLiquidityPerChainAndTokenColumns({ chainFilter, bridg
         dataIndex: 'bridge',
         filters: bridgeFilter,
         onFilter: (value, record) => record.bridge.indexOf(value as string) === 0,
+        render: (bridge) => formatBridge(bridge)
       },
       {
         title: 'Total Liquidity',

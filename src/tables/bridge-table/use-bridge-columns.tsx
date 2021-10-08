@@ -2,7 +2,7 @@ import { useMemo } from 'react'
 import { ColumnsType } from 'antd/es/table'
 import { Bridge } from '@lifi/types'
 import { formatMoney } from '../../utils'
-import icons from './icons'
+import { formatBridge } from '@lifi/tables'
 
 export default function useBridgeColumns() {
   return useMemo<ColumnsType<Bridge>>(
@@ -11,20 +11,7 @@ export default function useBridgeColumns() {
         title: 'Name',
         dataIndex: 'bridge',
         render: (bridge) => {
-          // @ts-ignore
-          const icon = icons && icons[bridge]
-          return (
-            <>
-              {icon && (
-                <img
-                  style={{ width: '15px', height: 'auto', marginRight: '10px' }}
-                  alt={bridge}
-                  src={icon}
-                />
-              )}
-              {bridge}
-            </>
-          )
+          return formatBridge(bridge)
         },
       },
       {
