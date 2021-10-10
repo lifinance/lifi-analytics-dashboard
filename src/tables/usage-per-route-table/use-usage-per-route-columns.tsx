@@ -42,7 +42,7 @@ export default function useUsagePerRouteColumns({ fromFilter, toFilter }: Props)
         sorter: (a, b) => a.txns - b.txns,
       },
       {
-        title: 'Volumne',
+        title: 'Volume',
         dataIndex: 'volume',
         align: 'right',
         sorter: (a, b) => a.volume - b.volume,

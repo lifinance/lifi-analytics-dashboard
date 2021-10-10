@@ -1,10 +1,11 @@
 import React from 'react'
 import { BridgeTable, LiquidityPerChainAndTokenTable, UsagePerRouteTable } from '@lifi/tables'
 import { useFetch } from '@lifi/hooks'
-import { AssetMovement, Bridge, Individual, Pair } from '@lifi/types'
+import { AssetMovement, Bridge, DailyVolume, Individual, Pair } from '@lifi/types'
 import { Divider, Layout, Spin } from 'antd'
 import { Content, Header } from 'antd/lib/layout/layout'
 import logo from './logo.png'
+import { DailyChart } from '@lifi/charts'
 
 type BridgesResponse = {
   data: {
@@ -18,12 +19,17 @@ type AssetMovementResponse = {
   data: AssetMovement[]
 }
 
+type DailyVolumeResponse = {
+  data: DailyVolume[]
+}
+
 const API_BASE_URI = 'https://analytics.li.finance/api'
 
 export default function App() {
   const { data: bridgesData } = useFetch<BridgesResponse>(API_BASE_URI + '/bridges_tvl')
   const { data: movementData } = useFetch<AssetMovementResponse>(API_BASE_URI + '/asset_movement')
-  const isLoaded = !!bridgesData && !!movementData
+  const { data: dailyVolume } = useFetch<DailyVolumeResponse>(API_BASE_URI + '/date_volume')
+  const isLoaded = !!bridgesData && !!movementData && !!dailyVolume
   return (
     <Layout className="layout">
       <Header style={{ display: 'flex', alignItems: 'center' }}>
@@ -38,6 +44,8 @@ export default function App() {
             <BridgeTable data={bridgesData.data.tvl_bridges} />
             <Divider />
             <LiquidityPerChainAndTokenTable data={bridgesData.data.tvl_individual} />
+            <Divider />
+            <DailyChart data={dailyVolume.data} />
             <Divider />
             <UsagePerRouteTable data={movementData.data} />
           </>
