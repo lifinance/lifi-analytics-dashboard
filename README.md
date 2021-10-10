@@ -1,6 +1,6 @@
 # Li.Finance - Bridge Analytics Dashboard
 
-![Screenshot](./docs/images/nxtp_daily_volume.pmg?raw=true)
+![Screenshot](./docs/images/nxtp_daily_volume.png?raw=true)
 
 This projects allows to browse the bridge data aggregated by our [analytics-backend](https://github.com/lifinance/lifi-analytics-backend).
 
