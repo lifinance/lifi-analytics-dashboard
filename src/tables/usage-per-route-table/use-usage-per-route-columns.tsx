@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 import { ColumnsType } from 'antd/es/table'
-import { formatMoney } from '@lifi/utils'
+import { calculateTimeFromSeconds, formatMoney } from '@lifi/utils'
 import { AssetMovementFormatted } from '@lifi/types'
 import { ColumnFilterItem } from 'antd/es/table/interface'
 
@@ -29,11 +29,7 @@ export default function useUsagePerRouteColumns({ fromFilter, toFilter }: Props)
         dataIndex: 'timeTaken',
         align: 'right',
         sorter: (a, b) => a.timeTaken - b.timeTaken,
-        render: (duration) => {
-          const sec = Math.floor(duration % 60)
-          const min = Math.floor(duration / 60)
-          return min + ':' + (sec > 9 ? sec : '0' + sec) + ' min'
-        }
+        render: calculateTimeFromSeconds,
       },
       {
         title: '# Transaction',

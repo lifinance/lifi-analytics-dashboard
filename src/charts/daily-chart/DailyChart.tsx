@@ -1,7 +1,18 @@
 import { TableTitle } from '@lifi/components'
 import { DailyVolume } from '@lifi/types'
 import React from 'react'
-import { Bar, CartesianGrid, ComposedChart, Legend, Line, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
+import {
+  Bar,
+  CartesianGrid,
+  ComposedChart,
+  Legend,
+  Line,
+  ResponsiveContainer,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from 'recharts'
+import { dateFormat } from '@lifi/utils'
 
 type Props = {
   data: DailyVolume[]
@@ -12,10 +23,9 @@ export default function DailyChart({ data }: Props) {
     return {
       ...props,
       volume: Math.floor(volume / 1000) / 1000,
-      date: new Date(date).toLocaleDateString(),
+      date: dateFormat(new Date(date), 'dd/MM/yy'),
     }
   }) as DailyVolume[]
-
 
   return (
     <>
@@ -31,8 +41,7 @@ export default function DailyChart({ data }: Props) {
               right: 20,
               bottom: 20,
               left: 20,
-            }}
-          >
+            }}>
             <CartesianGrid stroke="#f5f5f5" />
             <XAxis dataKey="date" scale="band" />
 
