@@ -1,1 +1,1 @@
-export { default } from './BridgeTable'
+export { default } from './bridge-table'

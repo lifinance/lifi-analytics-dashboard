@@ -1,1 +1,1 @@
-export { default } from './DailyChart'
+export { default } from './daily-chart'

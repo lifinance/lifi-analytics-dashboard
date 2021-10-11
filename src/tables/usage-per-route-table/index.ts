@@ -1,1 +1,1 @@
-export { default } from './UsagePerRouteTable'
+export { default } from './usage-per-route-table'

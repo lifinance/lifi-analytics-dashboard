@@ -9,3 +9,8 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root'),
 )
+
+/*
+TODO:
+1. Add tests
+ */

@@ -1,2 +1,2 @@
-export { default } from './Icon'
+export { default } from './icon'
 export * from './types'

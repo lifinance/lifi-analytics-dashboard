@@ -6,6 +6,8 @@
       "@lifi/components/*": ["src/components/*"],
       "@lifi/charts": ["src/charts/index", "src/charts/*"],
       "@lifi/charts/*": ["src/charts/*"],
+      "@lifi/style": ["src/style/index", "src/style/*"],
+      "@lifi/style/*": ["src/style/*"],
       "@lifi/tables": ["src/tables/index", "src/tables/*"],
       "@lifi/tables/*": ["src/tables/*"],
       "@lifi/hooks": ["src/hooks/index", "src/hooks/*"],
