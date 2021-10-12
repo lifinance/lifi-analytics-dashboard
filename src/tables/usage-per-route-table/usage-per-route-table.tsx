@@ -2,6 +2,7 @@ import { AssetMovement, AssetMovementFormatted } from '@lifi/types'
 import useUsagePerRouteColumnsTable from './use-usage-per-route-table-columns'
 import { useCreateColumnFilter } from '@lifi/hooks'
 import { Table } from '@lifi/components'
+import { size } from '@lifi/style'
 
 type Props = {
   data: AssetMovement[]
@@ -27,6 +28,7 @@ export default function LiquidityPerChainAndToken({ data }: Props) {
       // @ts-ignore: figure out how to configure typings
       title="Usage per route (nxtp)"
       rowKey="id"
+      scroll={{ x: size.maxTablet }}
       dataSource={formattedData}
       columns={columns}
     />

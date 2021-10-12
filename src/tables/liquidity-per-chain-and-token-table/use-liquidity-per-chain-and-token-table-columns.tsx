@@ -2,8 +2,7 @@ import { useMemo } from 'react'
 import { ColumnsType } from 'antd/es/table'
 import { ColumnFilterItem } from 'antd/es/table/interface'
 import { Individual } from '@lifi/types'
-import { formatMoney } from '@lifi/utils'
-import { CryptoTitle, IconNames } from '@lifi/components'
+import { CryptoTitle, IconNames, Volume } from '@lifi/components'
 
 type Props = {
   chainFilter: ColumnFilterItem[]
@@ -40,7 +39,7 @@ export default function useLiquidityPerChainAndTokenTableColumns({
         dataIndex: 'tvl',
         align: 'right',
         sorter: (a, b) => a.tvl - b.tvl,
-        render: (tvl) => formatMoney(tvl, { hideDecimal: true }),
+        render: (tvl) => <Volume amount={tvl} />,
       },
     ],
     [chainFilter, bridgeFilter],

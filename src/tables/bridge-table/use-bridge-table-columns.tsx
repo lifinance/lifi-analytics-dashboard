@@ -1,8 +1,7 @@
 import { useMemo } from 'react'
 import { ColumnsType } from 'antd/es/table'
 import { Bridge } from '@lifi/types'
-import { formatMoney } from '../../utils'
-import { CryptoTitle, IconNames } from '@lifi/components'
+import { CryptoTitle, IconNames, Volume } from '@lifi/components'
 
 export default function useBridgeTableColumns() {
   return useMemo<ColumnsType<Bridge>>(
@@ -16,7 +15,7 @@ export default function useBridgeTableColumns() {
         title: 'Total Liquidity',
         dataIndex: 'tvl',
         align: 'right',
-        render: (tvl) => formatMoney(tvl, { hideDecimal: true }),
+        render: (tvl) => <Volume amount={tvl} />,
       },
     ],
     [],

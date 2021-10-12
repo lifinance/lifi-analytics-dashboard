@@ -1,8 +1,9 @@
 import { useMemo } from 'react'
 import { ColumnsType } from 'antd/es/table'
-import { calculateTimeFromSeconds, formatMoney } from '@lifi/utils'
+import { calculateTimeFromSeconds } from '@lifi/utils'
 import { AssetMovementFormatted } from '@lifi/types'
 import { ColumnFilterItem } from 'antd/es/table/interface'
+import { Volume } from '@lifi/components'
 
 export type Props = {
   fromFilter: ColumnFilterItem[]
@@ -42,7 +43,7 @@ export default function useUsagePerRouteTableColumns({ fromFilter, toFilter }: P
         dataIndex: 'volume',
         align: 'right',
         sorter: (a, b) => a.volume - b.volume,
-        render: (volume) => formatMoney(volume, { hideDecimal: true }),
+        render: (tvl) => <Volume amount={tvl} />,
       },
     ],
     [],
