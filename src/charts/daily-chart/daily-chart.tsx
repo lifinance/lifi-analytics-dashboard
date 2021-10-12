@@ -1,4 +1,5 @@
 import { DailyVolume } from '@lifi/types'
+import * as R from 'ramda'
 import React from 'react'
 import {
   Bar,
@@ -13,28 +14,31 @@ import {
 } from 'recharts'
 import { dateFormat } from '@lifi/utils'
 import { Title } from './daily-chart-components'
+import millify from 'millify'
+import { useIsMobile, useIsTablet } from '@lifi/hooks'
 
 type Props = {
   data: DailyVolume[]
 }
 
 export default function DailyChart({ data }: Props) {
-  const formattedData = data.map(({ date, volume, ...props }) => {
-    return {
-      ...props,
-      volume: Math.floor(volume / 1000) / 1000,
-      date: dateFormat(new Date(date), 'dd/MM/yy'),
-    }
-  }) as DailyVolume[]
+  const isMobile = useIsMobile()
+  const isTablet = useIsTablet()
+  const take = isMobile ? 7 : isTablet ? 14 : 21
+  const chartHeight = isMobile ? 300 : isTablet ? 400 : 500
+  const formattedData = R.takeLast(
+    take,
+    data.map(({ date, ...props }) => ({ ...props, date: dateFormat(new Date(date), 'dd/MM/yy') })),
+  )
+
+  const tickFormatter = (v: number) => '$' + millify(v)
 
   return (
     <>
       <Title>Volume/Transactions per Day (nxtp)</Title>
-      <div style={{ height: 500, display: 'flex' }}>
+      <div style={{ height: chartHeight, display: 'flex' }}>
         <ResponsiveContainer width="100%" height="100%">
           <ComposedChart
-            width={500}
-            height={400}
             data={formattedData}
             margin={{
               top: 20,
@@ -50,8 +54,8 @@ export default function DailyChart({ data }: Props) {
               type="number"
               dataKey="volume"
               name="volume"
-              unit="m US$"
               stroke="#413ea0"
+              tickFormatter={tickFormatter}
             />
             <YAxis
               yAxisId="right"
@@ -60,12 +64,13 @@ export default function DailyChart({ data }: Props) {
               name="txns"
               orientation="right"
               stroke="#ff7300"
+              tickFormatter={(v) => millify(v)}
             />
 
             <Tooltip
               formatter={(value: number, name: string) => {
                 if (name === 'volume') {
-                  return `${value}m US$`
+                  return tickFormatter(value)
                 }
                 return value.toString()
               }}
