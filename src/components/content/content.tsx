@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { BridgeTable, LiquidityPerChainAndTokenTable, UsagePerRouteTable } from '@lifi/tables'
 import { useFetch } from '@lifi/hooks'
 import { AssetMovement, Bridge, DailyVolume, Individual, Pair } from '@lifi/types'
@@ -6,6 +6,8 @@ import { Divider, Spin } from 'antd'
 import logo from './logo.png'
 import { DailyChart } from '@lifi/charts'
 import { Header, Main, Title, Layout, LogoBox, Logo } from './content-components'
+import * as R from 'ramda'
+import cryptoNameFormatter from '@lifi/utils/crypto-name-formatter'
 
 type BridgesResponse = {
   data: {
@@ -29,21 +31,37 @@ export default function Content() {
   const { data: bridgesData } = useFetch<BridgesResponse>(API_BASE_URI + '/bridges_tvl')
   const { data: movementData } = useFetch<AssetMovementResponse>(API_BASE_URI + '/asset_movement')
   const { data: dailyVolume } = useFetch<DailyVolumeResponse>(API_BASE_URI + '/date_volume')
+
   const isLoaded = !!bridgesData && !!movementData && !!dailyVolume
+
+  const formattedBridges = useMemo(() => {
+    if (!bridgesData) return []
+    return bridgesData.data.tvl_bridges.map((bridge) =>
+      R.evolve({ bridge: cryptoNameFormatter })(bridge as object),
+    ) as Bridge[]
+  }, [bridgesData])
+
+  const formattedIndividual = useMemo(() => {
+    if (!bridgesData) return []
+    return bridgesData.data.tvl_individual.map((individual) =>
+      R.evolve({ chain: cryptoNameFormatter, bridge: cryptoNameFormatter })(individual as object),
+    ) as Individual[]
+  }, [bridgesData])
+
   return (
     <Layout className="layout">
       <Header>
         <LogoBox>
-          <Logo alt="logo" style={{ width: '100%', height: 'auto' }} src={logo} />
+          <Logo alt="logo" src={logo} />
         </LogoBox>
         <Title>Li.Finance - Bridge Analytics</Title>
       </Header>
       <Main>
         {isLoaded ? (
           <>
-            <BridgeTable data={bridgesData.data.tvl_bridges} />
+            <BridgeTable data={formattedBridges} />
             <Divider />
-            <LiquidityPerChainAndTokenTable data={bridgesData.data.tvl_individual} />
+            <LiquidityPerChainAndTokenTable data={formattedIndividual} />
             <Divider />
             <DailyChart data={dailyVolume.data} />
             <Divider />
