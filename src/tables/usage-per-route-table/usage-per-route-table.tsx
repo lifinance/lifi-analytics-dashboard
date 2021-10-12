@@ -14,7 +14,7 @@ export default function LiquidityPerChainAndToken({ data }: Props) {
     return {
       ...props,
       from,
-      to,
+      to: to.trim(),
       timeTaken: time_taken,
     }
   }) as AssetMovementFormatted[]

@@ -3,7 +3,7 @@ import { ColumnsType } from 'antd/es/table'
 import { calculateTimeFromSeconds } from '@lifi/utils'
 import { AssetMovementFormatted } from '@lifi/types'
 import { ColumnFilterItem } from 'antd/es/table/interface'
-import { Volume } from '@lifi/components'
+import { CryptoTitle, Volume } from '@lifi/components'
 
 export type Props = {
   fromFilter: ColumnFilterItem[]
@@ -17,12 +17,14 @@ export default function useUsagePerRouteTableColumns({ fromFilter, toFilter }: P
         title: 'From',
         dataIndex: 'from',
         filters: fromFilter,
+        render: (val) => <CryptoTitle name={val} />,
         onFilter: (value, record) => record.from.indexOf(value as string) === 0,
       },
       {
         title: 'To',
         dataIndex: 'to',
         filters: toFilter,
+        render: (val) => <CryptoTitle name={val} />,
         onFilter: (value, record) => record.to.indexOf(value as string) === 0,
       },
       {
