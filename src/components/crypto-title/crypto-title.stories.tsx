@@ -1,5 +1,6 @@
 import { withContainer } from '@lifi/utils'
 import styled from 'styled-components'
+
 import CryptoTitle from './crypto-title'
 
 export default {

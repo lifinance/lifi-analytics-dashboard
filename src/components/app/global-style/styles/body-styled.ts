@@ -1,5 +1,5 @@
-import { css } from 'styled-components'
 import { defaultFontFamily } from '@lifi/style'
+import { css } from 'styled-components'
 
 export const bodyStyled = css<{ bodyMargin?: string }>`
   body {

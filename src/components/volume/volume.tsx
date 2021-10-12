@@ -1,5 +1,5 @@
-import { formatMoney } from '@lifi/utils'
 import { useIsTablet } from '@lifi/hooks'
+import { formatMoney } from '@lifi/utils'
 import millify from 'millify'
 
 type Props = {

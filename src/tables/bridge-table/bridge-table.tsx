@@ -1,6 +1,7 @@
-import useBridgeTableColumns from './use-bridge-table-columns'
-import { Bridge } from '@lifi/types'
 import { Table } from '@lifi/components'
+import { Bridge } from '@lifi/types'
+
+import useBridgeTableColumns from './use-bridge-table-columns'
 
 type Props = {
   data: Bridge[]

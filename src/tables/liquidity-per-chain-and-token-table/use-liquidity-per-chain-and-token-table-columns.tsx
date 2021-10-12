@@ -1,8 +1,8 @@
-import { useMemo } from 'react'
+import { CryptoTitle, IconNames, Volume } from '@lifi/components'
+import { Individual } from '@lifi/types'
 import { ColumnsType } from 'antd/es/table'
 import { ColumnFilterItem } from 'antd/es/table/interface'
-import { Individual } from '@lifi/types'
-import { CryptoTitle, IconNames, Volume } from '@lifi/components'
+import { useMemo } from 'react'
 
 type Props = {
   chainFilter: ColumnFilterItem[]

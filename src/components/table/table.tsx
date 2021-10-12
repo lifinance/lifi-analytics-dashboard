@@ -1,4 +1,5 @@
 import { Table as AntdTable, TableProps } from 'antd'
+
 import { Title } from './table-components'
 
 // TODO: fix issue with title typing

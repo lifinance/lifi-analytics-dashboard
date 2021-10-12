@@ -1,9 +1,9 @@
-import { useMemo } from 'react'
-import { ColumnsType } from 'antd/es/table'
-import { calculateTimeFromSeconds } from '@lifi/utils'
-import { AssetMovementFormatted } from '@lifi/types'
-import { ColumnFilterItem } from 'antd/es/table/interface'
 import { CryptoTitle, Volume } from '@lifi/components'
+import { AssetMovementFormatted } from '@lifi/types'
+import { calculateTimeFromSeconds } from '@lifi/utils'
+import { ColumnsType } from 'antd/es/table'
+import { ColumnFilterItem } from 'antd/es/table/interface'
+import { useMemo } from 'react'
 
 export type Props = {
   fromFilter: ColumnFilterItem[]

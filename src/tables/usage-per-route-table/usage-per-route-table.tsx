@@ -1,8 +1,9 @@
-import { AssetMovement, AssetMovementFormatted } from '@lifi/types'
-import useUsagePerRouteColumnsTable from './use-usage-per-route-table-columns'
-import { useCreateColumnFilter } from '@lifi/hooks'
 import { Table } from '@lifi/components'
+import { useCreateColumnFilter } from '@lifi/hooks'
 import { size } from '@lifi/style'
+import { AssetMovement, AssetMovementFormatted } from '@lifi/types'
+
+import useUsagePerRouteColumnsTable from './use-usage-per-route-table-columns'
 
 type Props = {
   data: AssetMovement[]

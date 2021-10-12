@@ -1,7 +1,7 @@
-import styled from 'styled-components'
-import { Content as AntdContent, Header as AntdHeader } from 'antd/lib/layout/layout'
-import { Layout as AntdLayout } from 'antd'
 import { screenSize, title1, white } from '@lifi/style'
+import { Layout as AntdLayout } from 'antd'
+import { Content as AntdContent, Header as AntdHeader } from 'antd/lib/layout/layout'
+import styled from 'styled-components'
 
 export const Layout = styled(AntdLayout)`
   min-height: auto;

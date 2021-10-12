@@ -1,8 +1,9 @@
-import { Individual } from '@lifi/types'
-import { useCreateColumnFilter } from '@lifi/hooks'
-import useLiquidityPerChainAndTokenTableColumns from './use-liquidity-per-chain-and-token-table-columns'
 import { Table } from '@lifi/components'
+import { useCreateColumnFilter } from '@lifi/hooks'
 import { size } from '@lifi/style'
+import { Individual } from '@lifi/types'
+
+import useLiquidityPerChainAndTokenTableColumns from './use-liquidity-per-chain-and-token-table-columns'
 
 type Props = {
   data: Individual[]

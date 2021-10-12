@@ -1,4 +1,5 @@
 import { Icon, IconNames } from '@lifi/components'
+
 import { Container } from './crypto-title-components'
 
 type Props = {

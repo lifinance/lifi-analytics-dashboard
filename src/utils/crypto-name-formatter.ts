@@ -1,4 +1,5 @@
 import * as R from 'ramda'
+
 import { capitalize } from './capitalize'
 
 export default function cryptoNameFormatter(name: string): string {

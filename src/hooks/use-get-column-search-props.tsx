@@ -1,8 +1,8 @@
 // @ts-nocheck
-import { Button, Input, Space } from 'antd'
 import { SearchOutlined } from '@ant-design/icons'
-import Highlighter from 'react-highlight-words'
+import { Button, Input, Space } from 'antd'
 import { useState } from 'react'
+import Highlighter from 'react-highlight-words'
 
 export default function useGetColumnSearchProps() {
   const [searchText, setSearchText] = useState('')

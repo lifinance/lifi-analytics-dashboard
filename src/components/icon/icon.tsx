@@ -1,4 +1,5 @@
 import * as R from 'ramda'
+
 import { cryptoIcons } from './crypto-icons'
 import { IconNames } from './types'
 

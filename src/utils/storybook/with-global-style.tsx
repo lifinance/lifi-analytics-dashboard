@@ -1,6 +1,6 @@
-import React from 'react'
-import { DecoratorFn } from '@storybook/react'
 import { GlobalStyle } from '@lifi/components/app/global-style'
+import { DecoratorFn } from '@storybook/react'
+import React from 'react'
 
 export function withGlobalStyle(): DecoratorFn {
   return (storyFn) => (

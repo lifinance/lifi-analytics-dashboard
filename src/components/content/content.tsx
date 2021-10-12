@@ -1,13 +1,14 @@
-import React, { useMemo } from 'react'
-import { BridgeTable, LiquidityPerChainAndTokenTable, UsagePerRouteTable } from '@lifi/tables'
-import { useFetch } from '@lifi/hooks'
-import { AssetMovement, Bridge, DailyVolume, Individual, Pair } from '@lifi/types'
-import { Divider, Spin } from 'antd'
-import logo from './logo.png'
 import { DailyChart } from '@lifi/charts'
-import { Header, Main, Title, Layout, LogoBox, Logo } from './content-components'
-import * as R from 'ramda'
+import { useFetch } from '@lifi/hooks'
+import { BridgeTable, LiquidityPerChainAndTokenTable, UsagePerRouteTable } from '@lifi/tables'
+import { AssetMovement, Bridge, DailyVolume, Individual, Pair } from '@lifi/types'
 import cryptoNameFormatter from '@lifi/utils/crypto-name-formatter'
+import { Divider, Spin } from 'antd'
+import * as R from 'ramda'
+import React, { useMemo } from 'react'
+
+import { Header, Layout, Logo,LogoBox, Main, Title } from './content-components'
+import logo from './logo.png'
 
 type BridgesResponse = {
   data: {

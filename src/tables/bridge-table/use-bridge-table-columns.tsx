@@ -1,7 +1,7 @@
-import { useMemo } from 'react'
-import { ColumnsType } from 'antd/es/table'
-import { Bridge } from '@lifi/types'
 import { CryptoTitle, IconNames, Volume } from '@lifi/components'
+import { Bridge } from '@lifi/types'
+import { ColumnsType } from 'antd/es/table'
+import { useMemo } from 'react'
 
 export default function useBridgeTableColumns() {
   return useMemo<ColumnsType<Bridge>>(

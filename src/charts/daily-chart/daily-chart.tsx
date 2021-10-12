@@ -1,4 +1,7 @@
+import { useIsMobile, useIsTablet } from '@lifi/hooks'
 import { DailyVolume } from '@lifi/types'
+import { dateFormat } from '@lifi/utils'
+import millify from 'millify'
 import * as R from 'ramda'
 import React from 'react'
 import {
@@ -12,10 +15,8 @@ import {
   XAxis,
   YAxis,
 } from 'recharts'
-import { dateFormat } from '@lifi/utils'
+
 import { Title } from './daily-chart-components'
-import millify from 'millify'
-import { useIsMobile, useIsTablet } from '@lifi/hooks'
 
 type Props = {
   data: DailyVolume[]

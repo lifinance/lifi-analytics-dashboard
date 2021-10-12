@@ -1,6 +1,6 @@
+import { ColumnFilterItem } from 'antd/es/table/interface'
 import * as R from 'ramda'
 import { useMemo } from 'react'
-import { ColumnFilterItem } from 'antd/es/table/interface'
 
 export default function useCreateColumnFilter(data: unknown[], key: string): ColumnFilterItem[] {
   return useMemo(
