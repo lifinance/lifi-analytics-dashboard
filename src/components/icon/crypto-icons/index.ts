@@ -28,8 +28,10 @@ import iotex from './assets/iotex.png'
 import nxtp from './assets/nxtp.png'
 import cbridge from './assets/cbridge.png'
 import anyswap from './assets/anyswap.png'
+import shiden from './assets/shiden.png'
 
 export const cryptoIcons = {
+  'shiden network': shiden,
   iotex,
   fusion,
   kcc,
