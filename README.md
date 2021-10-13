@@ -4,6 +4,40 @@
 
 This projects allows to browse the bridge data aggregated by our [analytics-backend](https://github.com/lifinance/lifi-analytics-backend).
 
+## Creating new components
+
+### `yarn generate:component <ComponentName>`
+
+Example
+
+```
+$ yarn generate:component CryptoTitle
+```
+
+or
+
+```
+$ yarn gc CryptoTitle
+```
+
+Generates following component structure:
+
+```
+➜ tree src/components/crypto-title
+src/components/crypto-title
+├── crypto-title-styled.tsx
+├── crypto-title.stories.tsx
+├── crypto-title.tsx
+└── index.ts
+```
+
+Make sure to follow this structure:
+
+1. All `styled-components` go into `<name>-styled.tsx` file
+2. All storybook definitions go into `<name>.stories.tsx` file
+3. `<name>.tsx` is a component's main file name
+
+Feel free to remove files that are not necessary for a given component (say if your component doesn't require `styled-components`)
 
 ## Available Scripts
 
