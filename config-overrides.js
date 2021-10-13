@@ -13,4 +13,11 @@ module.exports = {
 
     return paths
   },
+
+  jest(config) {
+    config.moduleNameMapper['^@lifi(.*)$'] = '<rootDir>/src$1'
+    config.testTimeout = 15000
+
+    return config
+  },
 }
