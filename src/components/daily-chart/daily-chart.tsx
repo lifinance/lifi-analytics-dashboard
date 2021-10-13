@@ -27,6 +27,12 @@ export function DailyChart({ data }: Props) {
   const isTablet = useIsTablet()
   const take = isMobile ? 7 : isTablet ? 14 : 21
   const chartHeight = isMobile ? 300 : isTablet ? 400 : 500
+  const axisWidth = isMobile ? 34 : isTablet ? 40 : 44
+  const fontSize = isMobile ? 1.2 : isTablet ? 1.4 : 1.6
+  const tickStyle = {
+    fontSize: `${fontSize}rem`,
+  }
+
   const formattedData = R.takeLast(
     take,
     data.map(({ date, ...props }) => ({ ...props, date: dateFormat(new Date(date), 'dd/MM/yy') })),
@@ -43,12 +49,10 @@ export function DailyChart({ data }: Props) {
             data={formattedData}
             margin={{
               top: 20,
-              right: 20,
               bottom: 20,
-              left: 20,
             }}>
             <CartesianGrid stroke="#f5f5f5" />
-            <XAxis dataKey="date" scale="band" />
+            <XAxis dataKey="date" scale="band" style={tickStyle} />
 
             <YAxis
               yAxisId="left"
@@ -56,6 +60,8 @@ export function DailyChart({ data }: Props) {
               dataKey="volume"
               name="volume"
               stroke="#413ea0"
+              width={axisWidth}
+              style={tickStyle}
               tickFormatter={tickFormatter}
             />
             <YAxis
@@ -65,6 +71,8 @@ export function DailyChart({ data }: Props) {
               name="txns"
               orientation="right"
               stroke="#ff7300"
+              width={axisWidth}
+              style={tickStyle}
               tickFormatter={(v) => millify(v)}
             />
 
