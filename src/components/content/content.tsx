@@ -4,6 +4,7 @@ import {
   LiquidityPerChainAndTokenTable,
   UsagePerRouteTable,
 } from '@lifi/components'
+import { API_BASE_URI } from '@lifi/constants'
 import { useFetch } from '@lifi/hooks'
 import { AssetMovement, Bridge, DailyVolume, Individual, Pair } from '@lifi/types'
 import { cryptoNameFormatter } from '@lifi/utils'
@@ -29,8 +30,6 @@ type AssetMovementResponse = {
 type DailyVolumeResponse = {
   data: DailyVolume[]
 }
-
-const API_BASE_URI = process.env.SERVER_URL + '/api'
 
 export function Content() {
   const { data: bridgesData } = useFetch<BridgesResponse>(API_BASE_URI + '/bridges_tvl')

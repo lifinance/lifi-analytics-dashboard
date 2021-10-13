@@ -11,7 +11,9 @@
       "@lifi/types": ["src/types/index", "src/types/*"],
       "@lifi/types/*": ["src/types/*"],
       "@lifi/utils": ["src/utils/index", "src/utils/*"],
-      "@lifi/utils/*": ["src/utils/*"]
+      "@lifi/utils/*": ["src/utils/*"],
+      "@lifi/constants": ["src/constants/index", "src/constants/*"],
+      "@lifi/constants/*": ["src/constants/*"]
     }
   }
 }
