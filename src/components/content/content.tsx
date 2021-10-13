@@ -30,7 +30,7 @@ type DailyVolumeResponse = {
   data: DailyVolume[]
 }
 
-const API_BASE_URI = 'https://analytics.li.finance/api'
+const API_BASE_URI = process.env.SERVER_URL + '/api'
 
 export function Content() {
   const { data: bridgesData } = useFetch<BridgesResponse>(API_BASE_URI + '/bridges_tvl')
