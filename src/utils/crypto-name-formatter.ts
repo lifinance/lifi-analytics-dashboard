@@ -2,7 +2,7 @@ import * as R from 'ramda'
 
 import { capitalize } from './capitalize'
 
-export default function cryptoNameFormatter(name: string): string {
+export function cryptoNameFormatter(name: string): string {
   const lowerCase = name.toLowerCase()
   return R.cond([
     [R.equals('bsc'), R.always('BSC')],

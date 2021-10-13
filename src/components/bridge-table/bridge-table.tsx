@@ -1,13 +1,13 @@
 import { Table } from '@lifi/components'
 import { Bridge } from '@lifi/types'
 
-import useBridgeTableColumns from './use-bridge-table-columns'
+import { useBridgeTableColumns } from './use-bridge-table-columns'
 
 type Props = {
   data: Bridge[]
 }
 
-export default function BridgeTable({ data }: Props) {
+export function BridgeTable({ data }: Props) {
   const columns = useBridgeTableColumns()
   return (
     <Table<Bridge>

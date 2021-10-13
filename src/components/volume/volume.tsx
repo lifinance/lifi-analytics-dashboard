@@ -6,7 +6,7 @@ type Props = {
   amount: number
 }
 
-export default function Volume({ amount }: Props) {
+export function Volume({ amount }: Props) {
   const isTablet = useIsTablet()
   const minAmountToMillify = 9999
   const formattedAmount =

@@ -1,10 +1,10 @@
 import { withContainer } from '@lifi/utils'
 import styled from 'styled-components'
 
-import CryptoTitle from './crypto-title'
+import { CryptoTitle } from './crypto-title'
 
 export default {
-  title: 'LIFI/UI/Button',
+  title: 'LIFI/Components/Crypto Title',
   decorators: [
     withContainer(styled.div`
       background-color: #fff;

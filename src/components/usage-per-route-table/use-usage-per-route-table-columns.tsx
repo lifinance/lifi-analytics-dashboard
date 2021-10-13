@@ -10,7 +10,7 @@ export type Props = {
   toFilter: ColumnFilterItem[]
 }
 
-export default function useUsagePerRouteTableColumns({ fromFilter, toFilter }: Props) {
+export function useUsagePerRouteTableColumns({ fromFilter, toFilter }: Props) {
   return useMemo<ColumnsType<AssetMovementFormatted>>(
     () => [
       {

@@ -1,1 +1,1 @@
-export { default } from './crypto-title'
+export * from './crypto-title'

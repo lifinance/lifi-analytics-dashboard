@@ -3,7 +3,7 @@ import { Bridge } from '@lifi/types'
 import { ColumnsType } from 'antd/es/table'
 import { useMemo } from 'react'
 
-export default function useBridgeTableColumns() {
+export function useBridgeTableColumns() {
   return useMemo<ColumnsType<Bridge>>(
     () => [
       {

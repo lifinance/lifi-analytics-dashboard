@@ -16,13 +16,13 @@ import {
   YAxis,
 } from 'recharts'
 
-import { Title } from './daily-chart-components'
+import { Title } from './daily-chart-styled'
 
 type Props = {
   data: DailyVolume[]
 }
 
-export default function DailyChart({ data }: Props) {
+export function DailyChart({ data }: Props) {
   const isMobile = useIsMobile()
   const isTablet = useIsTablet()
   const take = isMobile ? 7 : isTablet ? 14 : 21

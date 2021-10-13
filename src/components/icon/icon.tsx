@@ -7,7 +7,7 @@ type Props = {
   name: IconNames
 }
 
-export default function Icon({ name }: Props) {
+export function Icon({ name }: Props) {
   const icon = cryptoIcons[R.toLower(name)]
   if (!icon) return null
   return (

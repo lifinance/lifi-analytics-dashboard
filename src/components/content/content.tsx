@@ -1,13 +1,17 @@
-import { DailyChart } from '@lifi/charts'
+import {
+  BridgeTable,
+  DailyChart,
+  LiquidityPerChainAndTokenTable,
+  UsagePerRouteTable,
+} from '@lifi/components'
 import { useFetch } from '@lifi/hooks'
-import { BridgeTable, LiquidityPerChainAndTokenTable, UsagePerRouteTable } from '@lifi/tables'
 import { AssetMovement, Bridge, DailyVolume, Individual, Pair } from '@lifi/types'
-import cryptoNameFormatter from '@lifi/utils/crypto-name-formatter'
+import { cryptoNameFormatter } from '@lifi/utils'
 import { Divider, Spin } from 'antd'
 import * as R from 'ramda'
 import React, { useMemo } from 'react'
 
-import { Header, Layout, Logo,LogoBox, Main, Title } from './content-components'
+import { Header, Layout, Logo, LogoBox, Main, Title } from './content-styled'
 import logo from './logo.png'
 
 type BridgesResponse = {
@@ -28,7 +32,7 @@ type DailyVolumeResponse = {
 
 const API_BASE_URI = 'https://analytics.li.finance/api'
 
-export default function Content() {
+export function Content() {
   const { data: bridgesData } = useFetch<BridgesResponse>(API_BASE_URI + '/bridges_tvl')
   const { data: movementData } = useFetch<AssetMovementResponse>(API_BASE_URI + '/asset_movement')
   const { data: dailyVolume } = useFetch<DailyVolumeResponse>(API_BASE_URI + '/date_volume')

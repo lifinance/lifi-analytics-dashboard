@@ -1,10 +1,10 @@
 import { withContainer } from '@lifi/utils'
 import styled from 'styled-components'
 
-import Volume from './volume'
+import { Volume } from './volume'
 
 export default {
-  title: 'LIFI/UI/Volume',
+  title: 'LIFI/Components/Volume',
   decorators: [
     withContainer(styled.div`
       background-color: #fff;

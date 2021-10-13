@@ -9,10 +9,7 @@ type Props = {
   bridgeFilter: ColumnFilterItem[]
 }
 
-export default function useLiquidityPerChainAndTokenTableColumns({
-  chainFilter,
-  bridgeFilter,
-}: Props) {
+export function useLiquidityPerChainAndTokenTableColumns({ chainFilter, bridgeFilter }: Props) {
   return useMemo<ColumnsType<Individual>>(
     () => [
       {
