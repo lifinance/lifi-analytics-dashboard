@@ -39,6 +39,19 @@ Make sure to follow this structure:
 
 Feel free to remove files that are not necessary for a given component (say if your component doesn't require `styled-components`)
 
+## Style Guide for Storybook
+Select story type ['Components', 'Screens', 'UI', 'Tables', 'Charts']
+```
+export default {
+  title: 'LIFI/Components/Crypto Title',
+}
+```
+Show all states of a component
+```
+export const Primary = () => <CryptoTitle name="anyswap" />
+export const PrimaryNoIcon = () => <CryptoTitle name="anyswap" renderIcon={false} />
+```
+
 ## Available Scripts
 
 In the project directory, you can run:
