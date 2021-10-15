@@ -50,7 +50,8 @@ export function DailyChart({ data }: Props) {
             margin={{
               top: 20,
               bottom: 20,
-            }}>
+            }}
+          >
             <CartesianGrid stroke="#f5f5f5" />
             <XAxis dataKey="date" scale="band" style={tickStyle} />
 

@@ -35,7 +35,10 @@
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "generate:component": "plop --plopfile scripts/plop/generators/component.js component",
-    "gc": "yarn generate:component"
+    "gc": "yarn generate:component",
+    "pre-commit": "lint-staged",
+    "lint:fix": "eslint --ext .tsx --ext .ts ./src --fix",
+    "prettier:fix": "prettier --write ./src/."
   },
   "browserslist": {
     "production": [
@@ -86,8 +89,10 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": "eslint --fix",
-    "*.{js,jsx,ts,tsx,json,gql,html,md,yml}": "prettier --write"
+    "src/**/*.{ts,tsx}": [
+      "yarn run lint:fix",
+      "yarn run prettier:fix"
+    ]
   },
   "engines": {
     "node": "^14"
